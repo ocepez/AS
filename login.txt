@@ -1,0 +1,26 @@
+putty : e21901204@obiwan.univ-brest.fr
+mdp ent
+e21901204sql
+ig5#Q6v8
+e21901204_db1 e21901204_db2
+
+ jdbc:mariadb://obiwan.univ-brest.fr:3306/e21901204_db1
+
+
+////////////////////////////////////////////////////////////////////////////////
+structure d'état -> struc de classes
+
+correspondance entre contenu des données java et bases  de données (=> persistance
+
+1/ classes sport
+2/ DAO générique
+3/ fabrique pour contenu de persistance
+
+
+factory permet d'éviter de changer le type de persitance
+
+
+INSERT INTO `sportif` (`code_sportif`, `nom`, `rue`, `ville`, `code_postal`) VALUES
+ ('1', 'Martin', 'Jacques Cartier', 'Paris', '75000'), ('2', 'Jerome', 'Napoleon', 'Paris', '75000');
+
+INSERT INTO `pratique` (`code_sportif`, `code_discipline`) VALUES ('1', '1'), ('1', '2'), ('1', '7'), ('2', '3');

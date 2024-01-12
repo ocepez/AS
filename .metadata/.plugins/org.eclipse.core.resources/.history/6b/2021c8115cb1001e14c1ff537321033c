@@ -1,0 +1,12 @@
+package donnees;
+
+import java.util.ArrayList;
+
+public class Pratique {
+	
+	
+	ArrayList<Sportif> sportifs;
+	
+	ArrayList<Discipline> disciplines;
+
+}

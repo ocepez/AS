@@ -1,0 +1,72 @@
+/**
+ * Fichier de test de fonctionnement de l'accès aux données via des DAO.
+ * @author Eric
+ */
+import donnees.*;
+import sportsDAO.*;
+
+public class TestDAO {
+
+    public static void main(String argv[]) {
+        try {
+	    
+	    // création des DAO via les fabriques
+            SportsDAOFactory factory = AbstractDAOFactory.getDAOFactory(PersistenceKind.JDBC);
+            //SportsDAOFactory factory = AbstractDAOFactory.getDAOFactory(PersistenceKind.JSON);
+            //SportsDAOFactory factory = AbstractDAOFactory.getDAOFactory(PersistenceKind.JPA);
+
+            //va renvoyer un DAO sport
+            //
+            DAO<Sport> daoSport = factory.getDAOSport(); 
+            DAO<Discipline> daoDisc = factory.getDAODiscipline();
+            
+            // affichage du sport 1
+            Sport sport = daoSport.find(1);
+            System.out.println("Le sport d'id 1 est "+sport.getIntitule() + " et ses disciplines sont :");
+            for (Discipline disc : sport.getDisciplines()) {
+            	System.out.println(" --> "+disc.getIntitule());
+            }
+            
+            // création d'un sport et de disciplines
+            Sport s = new Sport();
+            s.setIntitule("Pétanque");
+            Discipline d1 = new Discipline();
+            d1.setIntitule("Triplette");
+            d1.setSport(s);
+            Discipline d2 = new Discipline();
+            d2.setIntitule("Doublette");
+            d2.setSport(s);
+            s.addDiscipline(d1);
+            s.addDiscipline(d2);
+            
+            // enregistrement des objets dans la BDD
+            daoSport.create(s); 
+            daoDisc.create(d1);
+            daoDisc.create(d2);
+                    
+            System.out.println("La pétanque et ses disciplines ont été ajoutées dans la BDD.");
+            
+            
+            
+            // Modification d'un discipline       
+            Discipline disc = daoDisc.find(10);
+            System.out.println("Le sport d'id 10 est "+disc.getIntitule() + "");
+      //      Discipline dss = new Discipline();
+        //    d1.setIntitule("3 vs 3");
+         //   d1.setSport(s);   
+          //  daoDisc.update(d1);
+            
+        
+
+            
+            
+
+
+             
+        } catch (Exception e) {
+            System.err.println(e);
+            e.printStackTrace();
+        }
+    }
+}
+

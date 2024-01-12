@@ -1,0 +1,7 @@
+package sportsDAO;
+
+import donnees.Sportif;
+
+public class DAO_JPA_Sportif implements DAO<Sportif> {
+
+}

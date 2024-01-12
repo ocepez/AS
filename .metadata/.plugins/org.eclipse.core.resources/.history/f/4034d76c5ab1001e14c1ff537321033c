@@ -1,0 +1,15 @@
+package donnees;
+
+public class Sportif {
+	
+	private int code_sportif;
+	
+	private string nom;
+	
+	private String rue;
+	
+	private String ville;
+	
+	private String code_postal;
+
+}
