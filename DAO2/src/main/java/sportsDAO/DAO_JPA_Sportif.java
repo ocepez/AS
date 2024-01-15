@@ -1,8 +1,13 @@
 package sportsDAO;
 
+import java.sql.Connection;
+
 import donnees.Sportif;
 
 public class DAO_JPA_Sportif extends DAO<Sportif> {
+
+	
+    private Connection connection = null;
 
 	public DAO_JPA_Sportif() throws DAOException {
 		super();

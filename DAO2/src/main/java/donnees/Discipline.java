@@ -72,7 +72,7 @@ public class Discipline implements Serializable {
         return sportifSet;
     }
 
-    public void setSportifSet(Set<Sportif> sportifSet) {
+    public void setSportif(Set<Sportif> sportifSet) {
         this.sportifSet = sportifSet;
     }
 

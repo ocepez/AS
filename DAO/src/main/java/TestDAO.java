@@ -19,7 +19,8 @@ public class TestDAO {
             //
             DAO<Sport> daoSport = factory.getDAOSport(); 
             DAO<Discipline> daoDisc = factory.getDAODiscipline();
-            
+            DAO<Sportif> daoSportif = factory.getDAOSportif();
+
             // affichage du sport 1
             Sport sport = daoSport.find(1);
             System.out.println("Le sport d'id 1 est "+sport.getIntitule() + " et ses disciplines sont :");
@@ -49,7 +50,7 @@ public class TestDAO {
             
             
             // Modification d'un discipline       
-            Discipline disc = daoDisc.find(10);
+            Discipline disc = daoDisc.find(1);
             System.out.println("Find : Le sport d'id 10 est "+disc.getIntitule() + "");
 
             Discipline dss = new Discipline();
@@ -57,15 +58,40 @@ public class TestDAO {
             s = daoSport.find(4);
             d1.setSport(s); 
             d1.setCodeDiscipline(10);
-            System.out.println("Update : Le sport d'id 10 est "+disc.getIntitule() + "");
+            System.out.println("Update : Le sport d'id 10 est "+s.getIntitule() + "");
             daoDisc.update(d1);
-            System.out.println("Fin Update : Le sport d'id 10 est "+disc.getIntitule() + "");
+            System.out.println("Fin Update : Le sport d'id 10 est "+s.getIntitule() + "");
             
             //Supprimer un discipline
             // daoDisc.delete(d1);
+            Sportif sport1 = new Sportif();
+            sport1.setCode_postal("29200");
+            sport1.setNom("Rec");
+            sport1.setRue("Bat");
+            sport1.setVille("Brest");
+            sport1.setCode_sportif(5);
+
+            daoSportif.create(sport1);
+            System.out.println("Sportif crée !");
+
             
-            
-            
+            daoSportif.delete(sport1);
+            System.out.println("Sportif supprimé !");
+            daoSportif.create(sport1);
+            System.out.println("Sportif recrée !");
+
+           Sportif spor = daoSportif.find(5);
+           System.out.println("nom Sportif id 5: "+spor.getNom());
+           Sportif sport2 = new Sportif();
+           sport2.setCode_postal("29200");
+           sport2.setNom("man");
+           sport2.setRue("rac");
+           sport2.setVille("Toulouse");
+           sport2.setCode_sportif(5);       
+           daoSportif.update(sport2);
+           spor = daoSportif.find(5);
+           System.out.println("nom Sportif id 5: "+spor.getNom());
+
             
 
 

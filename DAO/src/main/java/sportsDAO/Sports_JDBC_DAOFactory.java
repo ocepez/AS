@@ -2,6 +2,7 @@ package sportsDAO;
 
 import donnees.Discipline;
 import donnees.Sport;
+import donnees.Sportif;
 
 /**
  * Fabrique concrète de DAO pour le schéma relationnel sports avec une implémentation en JDBC.
@@ -18,6 +19,13 @@ public class Sports_JDBC_DAOFactory extends SportsDAOFactory {
      * Le DAO concret en JDBC pour la table Discipline
      */
     private DAO_JDBC_Discipline daoDiscipline = null;
+    
+    
+    
+    /**
+     * Le DAO concret en JDBC pour la table Sportif
+     */
+    private DAO_JDBC_Sportif daoSportif = null;
         
     @Override
     public DAO<Sport> getDAOSport() throws DAOException {
@@ -30,4 +38,10 @@ public class Sports_JDBC_DAOFactory extends SportsDAOFactory {
         if (daoDiscipline == null) daoDiscipline = new DAO_JDBC_Discipline();
         return daoDiscipline;
     }
+
+	@Override
+	public DAO<Sportif> getDAOSportif() throws DAOException {
+		if (daoSportif == null) daoSportif = new DAO_JDBC_Sportif();
+		return daoSportif;
+	}
 }

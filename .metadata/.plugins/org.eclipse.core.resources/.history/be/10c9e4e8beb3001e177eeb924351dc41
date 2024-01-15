@@ -1,0 +1,80 @@
+package sportsDAO;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.HashSet;
+import java.util.Set;
+
+import donnees.Discipline;
+import donnees.Sport;
+import donnees.Sportif;
+
+public class DAO_JPA_Discipline extends DAO<Discipline>{
+
+	
+    private Connection connection = null;
+
+	public DAO_JPA_Discipline() throws DAOException {
+		super();
+        this.connection = SQLConnection.getConnection();
+	}
+    protected Sport getSport(int id) throws SQLException {
+        Statement req = connection.createStatement();
+        ResultSet res = req.executeQuery("select * from sport where code_sport=" + id);
+
+        //System.out.println(" Les disciplines du sport " + sport.getIntitule());
+        Sport sport = new Sport();
+        Discipline disc;
+        while (res.next()) {
+            //System.out.println(" -> " + res.getString(2));
+            sport.setCodeSport(res.getInt(1));;
+            sport.setIntitule(res.getString(2));
+
+        }
+        return sport;
+    }
+	@Override
+	public Discipline find(int id) throws DAOException {
+    	Discipline discipline = null;
+    	try {
+    		Statement req = connection.createStatement();
+    		ResultSet res = req.executeQuery("select * from discipline where code_discipline="+id+"");
+    		//tableau
+            if (res.next()) {
+            System.out.println("La discipline est "+id + "");
+    			discipline = new Discipline();
+    			discipline.setCodeDiscipline(res.getInt(1));
+    			discipline.setIntitule(res.getString(2));
+                Set<Sportif> sse = new HashSet<Sportif>();
+                sse.add(getSport(res.getInt(3)));
+    			discipline.setSportif();
+            }
+    		
+
+    	}catch(Exception e) {
+            throw new DAOException("Problème technique (" + e.getMessage() + ")");
+    	}    		
+    	return discipline;
+	}
+
+	@Override
+	public void create(Discipline data) throws DAOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Discipline data) throws DAOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Discipline data) throws DAOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

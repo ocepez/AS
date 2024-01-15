@@ -1,4 +1,7 @@
 package donnees;
+
+import java.util.List;
+
 //c'est un POJO 
 public class Sportif {
 	
@@ -11,6 +14,11 @@ public class Sportif {
 	private String ville;
 	
 	private String code_postal;
+	
+	
+	
+    private List<Discipline> disciplines;
+
 
 	public int getCode_sportif() {
 		return code_sportif;

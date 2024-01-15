@@ -2,6 +2,9 @@
  * Fichier de test de fonctionnement de l'accès aux données via des DAO.
  * @author Eric
  */
+import java.util.HashSet;
+import java.util.Set;
+
 import donnees.*;
 import sportsDAO.*;
 
@@ -9,11 +12,11 @@ public class TestDAO {
 
     public static void main(String argv[]) {
         try {
-	 /*   
+	   
 	    // création des DAO via les fabriques
-            SportsDAOFactory factory = AbstractDAOFactory.getDAOFactory(PersistenceKind.JDBC);
+           // SportsDAOFactory factory = AbstractDAOFactory.getDAOFactory(PersistenceKind.JDBC);
             //SportsDAOFactory factory = AbstractDAOFactory.getDAOFactory(PersistenceKind.JSON);
-            //SportsDAOFactory factory = AbstractDAOFactory.getDAOFactory(PersistenceKind.JPA);
+            SportsDAOFactory factory = AbstractDAOFactory.getDAOFactory(PersistenceKind.JPA);
 
             //va renvoyer un DAO sport
             //
@@ -36,9 +39,10 @@ public class TestDAO {
             Discipline d2 = new Discipline();
             d2.setIntitule("Doublette");
             d2.setCodeSport(s);
-            s.addDiscipline(d1);
-            s.addDiscipline(d2);
-            
+            Set<Discipline> sse = new HashSet<Discipline>();
+            sse.add(d1);
+            sse.add(d2);
+            s.setDiscipline(sse);            
             // enregistrement des objets dans la BDD
             //daoSport.create(s); 
            // daoDisc.create(d1);
@@ -66,10 +70,6 @@ public class TestDAO {
             
             
             
-            
-
-
-            */
             
 
 

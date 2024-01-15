@@ -10,7 +10,7 @@
 <property name="javax.persistence.jdbc.user" value="e21901204sql"/>
 <property name="javax.persistence.jdbc.password" value="ig5#Q6v8"/>
 <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
-<property name="hibernate.show_sql" value="true" />
+<property name="hibernate.show_sql" value="false" />
 </properties>
 </persistence-unit>
 </persistence>

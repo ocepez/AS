@@ -84,15 +84,15 @@ class DAO_JDBC_Discipline extends DAO<Discipline> {
     public void update(Discipline data) throws DAOException {
     	try {
 			Statement req = connection.createStatement();
-			System.out.println("UPDATE `discipline` SET `code_discipline` = '"+data.getCodeDiscipline()+
+			/*System.out.println("UPDATE `discipline` SET `code_discipline` = '"+data.getCodeDiscipline()+
 					"', `intitule` = '"+data.getIntitule()+"', `code_sport` = '"
 					+data.getSport().getCodeSport()+"' WHERE `discipline`.`code_discipline` = "
-					+data.getCodeDiscipline()+"");
+					+data.getCodeDiscipline()+"");*/
 			req.executeUpdate("UPDATE `discipline` SET `code_discipline` = '"+data.getCodeDiscipline()+
 					"', `intitule` = '"+data.getIntitule()+"', `code_sport` = '"
 					+data.getSport().getCodeSport()+"' WHERE `discipline`.`code_discipline` = "
 					+data.getCodeDiscipline()+"");
-			 System.out.println(" Discipline modifiée : " + data.getIntitule());
+			// System.out.println(" Discipline modifiée : " + data.getIntitule());
 
     	} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -105,6 +105,7 @@ class DAO_JDBC_Discipline extends DAO<Discipline> {
     public void delete(Discipline data) throws DAOException {
     	try {
 			Statement req = connection.createStatement();
+			req.execute("delete from  `pratique` WHERE `pratique`.`code_discipline` = "+data.getCodeDiscipline()+"");
 			req.execute("delete from  `discipline` WHERE `discipline`.`code_discipline` = "+data.getCodeDiscipline()+"");
 			System.out.println(" Discipline supprimée : " + data.getIntitule());
 
