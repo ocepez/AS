@@ -1,0 +1,54 @@
+package sportsDAO;
+
+import java.sql.Connection;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import donnees.Discipline;
+import donnees.Sport;
+import donnees.Sportif;
+
+public class DAO_JPA_Sport extends DAO_JPA<Sport> {
+
+
+	
+    private Connection connection = null;
+    private EntityManager em = null;
+
+	public DAO_JPA_Sport() throws DAOException {
+		super();
+        this.connection = SQLConnection.getConnection();
+	}
+	
+	public EntityManager getEntityManager() {
+		if(em == null) {
+		      EntityManagerFactory emf = Persistence.createEntityManagerFactory("SportsPU");
+		      EntityManager em = emf.createEntityManager();
+		      
+		}
+		return em;
+	}
+
+	@Override
+	public Sport find(int id) throws DAOException {
+        return em.find(Sport.class, id);
+	}
+
+	@Override
+	public void create(Sport disc) throws DAOException {
+		em.persist(disc);
+	}
+
+	@Override
+	public void update(Sport disc) throws DAOException {
+		em.persist(disc);	
+	}
+
+	@Override
+	public void delete(Sport disc) throws DAOException {
+		em.remove(disc);			
+	}
+
+}

@@ -20,13 +20,13 @@ public class Sports_JPA_DAOFactory extends SportsDAOFactory {
     private DAO_JPA_Discipline daoDiscipline = null;
         
     @Override
-    public DAO<Sport> getDAOSport() throws DAOException {
+    public DAO_JPA<Sport> getDAOSport() throws DAOException {
         if (daoSport == null) daoSport = new DAO_JPA_Sport();
         return daoSport;
     }
 
     @Override
-    public DAO<Discipline> getDAODiscipline() throws DAOException {
+    public DAO_JPA<Discipline> getDAODiscipline() throws DAOException {
         if (daoDiscipline == null) daoDiscipline = new DAO_JPA_Discipline();
         return daoDiscipline;
     }

@@ -1,3 +1,4 @@
+https://obiwan.univ-brest.fr/phpmyadmin/
 putty : e21901204@obiwan.univ-brest.fr
 mdp ent
 e21901204sql
@@ -16,6 +17,8 @@ correspondance entre contenu des données java et bases  de données (=> persist
 2/ DAO générique
 3/ fabrique pour contenu de persistance
 
+Plain Old Java Object = POJO
+entité JPA
 
 factory permet d'éviter de changer le type de persitance
 

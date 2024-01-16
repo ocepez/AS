@@ -1,0 +1,69 @@
+package sportsDAO;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import donnees.Discipline;
+import donnees.Sport;
+import donnees.Sportif;
+
+public class DAO_JPA_Discipline extends DAO<Discipline>{
+
+	
+    private Connection connection = null;
+    private EntityManager em = null;
+
+	public DAO_JPA_Discipline() throws DAOException {
+		super();
+        this.connection = SQLConnection.getConnection();
+	}
+	
+	public EntityManager getEntityManager() {
+		if(em == null) {
+		      EntityManagerFactory emf = Persistence.createEntityManagerFactory("SportsPU");
+		      EntityManager em = emf.createEntityManager();
+		      
+		}
+		return em;
+	}
+
+	@Override
+	public Discipline find(int id) throws DAOException {
+        return em.find(Discipline.class, id);
+	}
+
+	@Override
+	public void create(Discipline disc) throws DAOException {
+		
+		 em.persist(disc);
+	}
+
+	@Override
+	public void update(Discipline disc) throws DAOException {
+		em.persist(disc);	
+	}
+
+	@Override
+	public void delete(Discipline disc) throws DAOException {
+		try {   
+			Statement req = connection.createStatement();
+			int nb = req.executeUpdate("delete from  `pratique` WHERE `pratique`.`code_discipline` = "+ disc.getCodeDiscipline()  + "");
+			req.execute("delete from  `discipline` WHERE `discipline`.`code_discipline` = "+disc.getCodeDiscipline()+"");
+			System.out.println(" Discipline modifiée : " + disc.getIntitule());
+
+    	} catch (SQLException e) {
+			// TODO Auto-generated catch block
+            throw new DAOException("Problème technique (" + e.getMessage() + ")");
+		}				
+	}
+
+}

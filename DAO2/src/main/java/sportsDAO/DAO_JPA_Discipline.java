@@ -8,119 +8,106 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
+import javax.persistence.EntityExistsException;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import javax.persistence.TransactionRequiredException;
+
 import donnees.Discipline;
 import donnees.Sport;
 import donnees.Sportif;
 
-public class DAO_JPA_Discipline extends DAO<Discipline>{
+public class DAO_JPA_Discipline extends DAO_JPA<Discipline>{
 
 	
     private Connection connection = null;
+    private EntityManager em = null;
+    private EntityTransaction trans = null;
 
 	public DAO_JPA_Discipline() throws DAOException {
 		super();
         this.connection = SQLConnection.getConnection();
+        getEntityManager();
+
 	}
-    protected Sportif getSportif(int id) throws SQLException {
-        Statement req = connection.createStatement();
-        ResultSet res = req.executeQuery("select * from sportif where code_sportif=" + id);
+	
+	public EntityManager getEntityManager() {
+		if(em == null) {
+		      EntityManagerFactory emf = Persistence.createEntityManagerFactory("SportsPU");
+		      em = emf.createEntityManager();
+		      
+		}
+		return em;
+	}
 
-        //System.out.println(" Les disciplines du sport " + sport.getIntitule());
-        Sportif sport = new Sportif();
-        Discipline disc;
-        while (res.next()) {
-            //System.out.println(" -> " + res.getString(2));
-            sport.setCodeSportif(res.getInt(1));
-            sport.setNom(res.getString(2));
-            sport.setRue(res.getString(3));
-            sport.setVille(res.getString(4));
-            sport.setCodePostal(res.getString(5));
-
-        }
-        return sport;
-    }
 	@Override
 	public Discipline find(int id) throws DAOException {
-    	Discipline discipline = null;
-    	try {
-    		Statement req = connection.createStatement();
-    		ResultSet res = req.executeQuery("select * from discipline where code_discipline="+id+"");
-    		//tableau
-            if (res.next()) {
-            System.out.println("La discipline est "+id + "");
-    			discipline = new Discipline();
-    			discipline.setCodeDiscipline(res.getInt(1));
-    			discipline.setIntitule(res.getString(2));
-                Set<Sportif> sse = new HashSet<Sportif>();
-                sse.add(getSportif(res.getInt(3)));
-    			discipline.setSportif(sse);
-            }
-    		
-
-    	}catch(Exception e) {
-            throw new DAOException("Problème technique (" + e.getMessage() + ")");
-    	}    		
-    	return discipline;
+        Discipline sport =  em.find(Discipline.class, id);
+        
+        return sport;
 	}
 
 	@Override
 	public void create(Discipline disc) throws DAOException {
-	     try {
-	            Statement req = connection.createStatement();
-	            ResultSet res = req.executeQuery("select max(code_discipline) from discipline");
-	            res.next();
-	            int codeDisc = res.getInt(1);
-	            codeDisc++;
-	            disc.setCodeDiscipline(codeDisc);
+		try {
+			trans = em.getTransaction();
+			trans.begin();
+			em.persist(disc);
+			trans.commit();
+		} catch(EntityExistsException e) {
+			System.out.println("Sport create : Element déjà créé");
+		} catch(IllegalArgumentException  e ) {
+			System.out.println("Sport create : Argument mauvais");
 
-	            req = connection.createStatement();
-	            int nb = req.executeUpdate("insert into discipline values (" + codeDisc + " , '" + disc.getIntitule() + "' , " + disc.getCodeSport() + ")");
-	           System.out.println(" Discipline ajoutée : " + disc.getIntitule());
-	          Iterator<Sportif> iter = disc.getSportifSet().iterator();
-	           while(iter.hasNext()) {
-		        nb = req.executeUpdate("insert into pratique values (" +iter.next().getCodeSportif() + " , '" +  disc.getCodeDiscipline()  + ")");
-	           }
-
-	        } catch (Exception e) {
-	            throw new DAOException("Problème technique (" + e.getMessage() + ")");
-	        }		
+			
+		} catch(TransactionRequiredException f) {
+			System.out.println("Sport create : Transaction non active");
+			if(trans != null) {
+				trans.rollback();
+			}
+		}
+	
 	}
 
 	@Override
 	public void update(Discipline disc) throws DAOException {
-        Iterator<Sportif> iter = disc.getSportifSet().iterator();
+		try {
+			trans = em.getTransaction();
+			trans.begin();
+			em.persist(disc);
+			trans.commit();
+		} catch(EntityExistsException e) {
+			System.out.println("Sport update : Element déjà créé");
+		
+		} catch(IllegalArgumentException  e ) {
+			System.out.println("Sport update : Argument mauvais");
 
-		try {   
-			Statement req = connection.createStatement();
-			int nb = req.executeUpdate("delete from  `pratique` WHERE `pratique`.`code_discipline` = "+ disc.getCodeDiscipline()  + "");
-			while(iter.hasNext()) {
-				nb = req.executeUpdate("update pratique set  `code_Sportif` = '" +iter.next().getCodeSportif() + "', `code_discipline` = '" + 
-			disc.getCodeDiscipline()  + "')");
+			
+		} catch(TransactionRequiredException f) {
+			System.out.println("Sport update : Transaction non active");
+			if(trans != null) {
+				trans.rollback();
 			}
-			req.executeUpdate("UPDATE `discipline` SET `code_discipline` = '"+disc.getCodeDiscipline()+
-					"', `intitule` = '"+disc.getIntitule()+"', `code_sport` = '"
-					+disc.getCodeSport()+"' WHERE `discipline`.`code_discipline` = "
-					+disc.getCodeDiscipline()+"");
-			 System.out.println(" Discipline modifiée : " + disc.getIntitule());
+		}
 
-    	} catch (SQLException e) {
-			// TODO Auto-generated catch block
-            throw new DAOException("Problème technique (" + e.getMessage() + ")");
-		}		
-	}
+		}
 
 	@Override
 	public void delete(Discipline disc) throws DAOException {
-		try {   
-			Statement req = connection.createStatement();
-			int nb = req.executeUpdate("delete from  `pratique` WHERE `pratique`.`code_discipline` = "+ disc.getCodeDiscipline()  + "");
-			req.execute("delete from  `discipline` WHERE `discipline`.`code_discipline` = "+disc.getCodeDiscipline()+"");
-			System.out.println(" Discipline modifiée : " + disc.getIntitule());
+		try {
+			trans = em.getTransaction();
+			trans.begin();
+			em.remove(disc);
+			trans.commit();
+		} catch(IllegalArgumentException  e ) {
+			System.out.println("Sport update : Argument mauvais");
 
-    	} catch (SQLException e) {
-			// TODO Auto-generated catch block
-            throw new DAOException("Problème technique (" + e.getMessage() + ")");
-		}				
+			
+		} catch(TransactionRequiredException f) {
+			System.out.println("Sport update : Transaction non active");
+		}
 	}
 
 }

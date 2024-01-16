@@ -1,0 +1,23 @@
+package sportsDAO;
+
+import donnees.Discipline;
+import donnees.Sport;
+
+/**
+ * Fabrique abstraite de DAO pour le schéma sports
+ * @author Eric
+ */
+public abstract class SportsDAOFactory<E> {
+    
+    /**
+     * @return le DAO pour la classe/table Sport.
+     * @throws DAOException en cas de problème
+     */
+    public abstract E<Sport> getDAOSport() throws DAOException;
+    
+    /**
+     * @return le DAO pour la classe/table Discipline.
+     * @throws DAOException en cas de problème
+     */
+    public abstract E<Discipline> getDAODiscipline() throws DAOException;
+}
