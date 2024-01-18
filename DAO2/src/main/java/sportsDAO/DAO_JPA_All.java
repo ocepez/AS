@@ -50,7 +50,7 @@ public class DAO_JPA_All<E> extends DAO_JPA<E> implements Serializable {
 		try {
 			trans = em.getTransaction();
 			trans.begin();
-			em.persist(disc);
+			em.merge(disc);
 			trans.commit();
 		} catch(EntityExistsException e) {
 			System.out.println("Sport create : Element déjà créé");
@@ -72,7 +72,7 @@ public class DAO_JPA_All<E> extends DAO_JPA<E> implements Serializable {
 		try {
 			trans = em.getTransaction();
 			trans.begin();
-			em.persist(disc);
+			em.merge(disc);
 			trans.commit();
 		} catch(EntityExistsException e) {
 			System.out.println("Sport update : Element déjà créé");

@@ -7,7 +7,6 @@ import javax.persistence.Embeddable;
 import javax.persistence.Table;
 
 @Embeddable
-@Table(name = "sportif")
 public class Adresse implements Serializable{
 	
     /**

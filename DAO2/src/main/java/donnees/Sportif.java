@@ -64,11 +64,6 @@ public class Sportif implements Serializable {
 	}
 
 	@Embedded
-    @AttributeOverrides( {
-     @AttributeOverride(name="rue", column = @Column(name="rue") ),
-     @AttributeOverride(name="codePostal", column = @Column(name="codePostal") ),
-     @AttributeOverride(name="ville", column = @Column(name="ville") )
-    } )
     private Adresse adresse;
 
     @JoinTable(name = "pratique", joinColumns = {

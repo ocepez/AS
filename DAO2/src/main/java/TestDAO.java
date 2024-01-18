@@ -95,11 +95,11 @@ public class TestDAO {
             sportif1.setNom("Tom");
             System.out.println("Debut create sportif");
             daoSportif.create(sportif1);
-            sportif1.setNom("Jackie");
+            sportif1.setNom("JB");
             System.out.println("Debut update sportif");
             daoSportif.update(sportif1);
             System.out.println("Debut delete sportif");
-            daoSportif.delete(sportif1);
+        //    daoSportif.delete(sportif1);
             System.out.println("Fin delete sportif");
 
             
