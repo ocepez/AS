@@ -99,6 +99,13 @@ public class DAO_JPA_Discipline extends DAO_JPA<Discipline>{
 		try {
 			trans = em.getTransaction();
 			trans.begin();
+			if(disc.getSportifSet() != null && !disc.getSportifSet().isEmpty()) {
+				Iterator<Sportif> iter = disc.getSportifSet().iterator();
+				while(iter.hasNext()) {
+					Sportif discc = iter.next();
+					em.remove(discc);
+				}
+			}
 			em.remove(disc);
 			trans.commit();
 		} catch(IllegalArgumentException  e ) {

@@ -6,8 +6,12 @@ package donnees;
 
 import java.io.Serializable;
 import java.util.Set;
+
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.Basic;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,9 +33,9 @@ import javax.persistence.Table;
     @NamedQuery(name = "Sportif.findAll", query = "SELECT s FROM Sportif s"),
     @NamedQuery(name = "Sportif.findByCodeSportif", query = "SELECT s FROM Sportif s WHERE s.codeSportif = :codeSportif"),
     @NamedQuery(name = "Sportif.findByNom", query = "SELECT s FROM Sportif s WHERE s.nom = :nom"),
-    @NamedQuery(name = "Sportif.findByRue", query = "SELECT s FROM Sportif s WHERE s.rue = :rue"),
-    @NamedQuery(name = "Sportif.findByVille", query = "SELECT s FROM Sportif s WHERE s.ville = :ville"),
-    @NamedQuery(name = "Sportif.findByCodePostal", query = "SELECT s FROM Sportif s WHERE s.codePostal = :codePostal")})
+    @NamedQuery(name = "Sportif.findByRue", query = "SELECT s FROM Sportif s WHERE s.adresse.rue = :rue"),
+    @NamedQuery(name = "Sportif.findByVille", query = "SELECT s FROM Sportif s WHERE s.adresse.ville =:ville"),
+    @NamedQuery(name = "Sportif.findByCodePostal", query = "SELECT s FROM Sportif s WHERE s.adresse.codePostal = :codePostal")})
 public class Sportif implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -40,83 +44,63 @@ public class Sportif implements Serializable {
     @Basic(optional = false)
     @Column(name = "code_sportif")
     private Integer codeSportif;
+  
     @Column(name = "nom")
     private String nom;
-    @Column(name = "rue")
-    private String rue;
-    @Column(name = "ville")
-    private String ville;
-    @Column(name = "code_postal")
-    private String codePostal;
+    
+    public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	@Embedded
+    @AttributeOverrides( {
+     @AttributeOverride(name="rue", column = @Column(name="rue") ),
+     @AttributeOverride(name="codePostal", column = @Column(name="codePostal") ),
+     @AttributeOverride(name="ville", column = @Column(name="ville") )
+    } )
+    private Adresse adresse;
+
     @JoinTable(name = "pratique", joinColumns = {
         @JoinColumn(name = "code_sportif", referencedColumnName = "code_sportif")}, inverseJoinColumns = {
         @JoinColumn(name = "code_discipline", referencedColumnName = "code_discipline")})
     @ManyToMany
     private Set<Discipline> disciplineSet;
 
-    public Sportif() {
-    }
-
-    public Sportif(Integer codeSportif) {
-        this.codeSportif = codeSportif;
-    }
+ 
 
     public Integer getCodeSportif() {
-        return codeSportif;
-    }
+		return codeSportif;
+	}
 
-    public void setCodeSportif(Integer codeSportif) {
-        this.codeSportif = codeSportif;
-    }
+	public void setCodeSportif(Integer codeSportif) {
+		this.codeSportif = codeSportif;
+	}
 
-    public String getNom() {
-        return nom;
-    }
+	public Adresse getAdresse() {
+		return adresse;
+	}
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
 
-    public String getRue() {
-        return rue;
-    }
+	public Set<Discipline> getDisciplineSet() {
+		return disciplineSet;
+	}
 
-    public void setRue(String rue) {
-        this.rue = rue;
-    }
+	public void setDisciplineSet(Set<Discipline> disciplineSet) {
+		this.disciplineSet = disciplineSet;
+	}
 
-    public String getVille() {
-        return ville;
-    }
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 
-    public void setVille(String ville) {
-        this.ville = ville;
-    }
-
-    public String getCodePostal() {
-        return codePostal;
-    }
-
-    public void setCodePostal(String codePostal) {
-        this.codePostal = codePostal;
-    }
-
-    public Set<Discipline> getDisciplineSet() {
-        return disciplineSet;
-    }
-
-    public void setDisciplineSet(Set<Discipline> disciplineSet) {
-        this.disciplineSet = disciplineSet;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (codeSportif != null ? codeSportif.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
+	@Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Sportif)) {

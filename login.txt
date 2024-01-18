@@ -5,6 +5,8 @@ e21901204sql
 ig5#Q6v8
 e21901204_db1 e21901204_db2
 
+https://second-helicopter-9cc.notion.site/Git-a2cb529d1cd946129c8be5a851cd8eb7
+
  jdbc:mariadb://obiwan.univ-brest.fr:3306/e21901204_db1
 
 

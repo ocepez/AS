@@ -1,0 +1,19 @@
+package donnees;
+
+import javax.persistence.Embeddable;
+
+public class Adresse {
+	
+	private String rue;
+	
+	private String ville;
+	
+	private String code_postal;
+	
+	
+	
+	
+	
+	
+
+}

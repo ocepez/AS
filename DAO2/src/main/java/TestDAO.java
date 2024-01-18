@@ -23,11 +23,13 @@ public class TestDAO {
             SportsDAOFactory factory = AbstractDAOFactory.getDAOFactory(PersistenceKind.JPA);
 
             //va renvoyer un DAO sport
-           DAO_JPA<Discipline> daoDisc = (DAO_JPA<Discipline>)factory.getDAODiscipline();
-           DAO_JPA<Sport> daoSport = (DAO_JPA<Sport>)factory.getDAOSport();
-            
+         //  DAO_JPA<Discipline> daoDisc = (DAO_JPA<Discipline>)factory.getDAODiscipline();
+         //  DAO_JPA<Sport> daoSport = (DAO_JPA<Sport>)factory.getDAOSport();
+           DAO_JPA_All<Discipline>  daoDisc = (DAO_JPA_All<Discipline>)factory.getDAODiscipline1();
+           DAO_JPA_All<Sport>  daoSport = (DAO_JPA_All<Sport>)factory.getDAOSport1();
+
             // affichage du sport 1
-            Sport sport = daoSport.find(1);
+            Sport sport = daoSport.find(1,Sport.class);
             System.out.println("Le sport d'id 1 est "+sport.getIntitule() + " et ses disciplines sont :");
             for (Discipline disc : sport.getDisciplineSet()) {
             	System.out.println(" --> "+disc.getIntitule());
@@ -38,41 +40,43 @@ public class TestDAO {
             s.setIntitule("Peche");
             Discipline d1 = new Discipline();
             d1.setIntitule("Poisson x10");
-            d1.setCodeSport(s);
+            d1.setCodeSport(daoSport.find(1,Sport.class));
             Discipline d2 = new Discipline();
             d2.setIntitule("Poisson 1kg");
-            d2.setCodeSport(s);
+            d2.setCodeSport(daoSport.find(1,Sport.class));
             Set<Discipline> sse = new HashSet<Discipline>();
             sse.add(d1);
             sse.add(d2);
-            s.setDiscipline(sse);            
+            //s.getDisciplineSet().add(d1);
+            //s.getDisciplineSet().add(d2);
+
+            //s.setDiscipline(sse);            
             // enregistrement des objets dans la BDD
-           // daoSport.create(s); 
-           // daoDisc.create(d1);
-           // daoDisc.create(d2);
+
+            daoDisc.create(d1);
+            daoDisc.create(d2);
+            daoSport.create(s); 
             
             
             d2.setIntitule("Poisson 10kg");
-            daoDisc.find(1);
+            //daoDisc.find(1);
             daoDisc.update(d2);
             daoDisc.delete(d2);
-            s.setCodeSport(4);
-            daoDisc.find(1);
+            s.setIntitule("Pecher");
             daoSport.update(s);
             daoSport.delete(s);
             System.out.println("La pèche et ses disciplines ont été ajoutées dans la BDD.");
             
-           /* 
+        
             
             // Modification d'un discipline       
-            Discipline disc = daoDisc.find(10);
+            Discipline disc = daoDisc.find(1, Discipline.class);
             System.out.println("Find : Le sport d'id 10 est "+disc.getIntitule() + "");
 
             Discipline dss = new Discipline();
             d1.setIntitule("3 vs 3");
-            s = daoSport.find(4);
+            s = daoSport.find(4, Sport.class);
             d1.setCodeSport(s); 
-            d1.setCodeDiscipline(10);
             System.out.println("Update : Le sport d'id 10 est "+disc.getIntitule() + "");
             daoDisc.update(d1);
             System.out.println("Fin Update : Le sport d'id 10 est "+disc.getIntitule() + "");
@@ -80,8 +84,25 @@ public class TestDAO {
             //Supprimer un discipline
             // daoDisc.delete(d1);
             
+            DAO_JPA_All<Sportif>  daoSportif = (DAO_JPA_All<Sportif>)factory.getDAOSportif1();
+            System.out.println("Debut find sportif");
+            Sportif sportif = daoSportif.find(1, Sportif.class);
+            System.out.println("Fin find sportif");
+            Sportif sportif1 = new Sportif();
+            System.out.println("adresse sportif");
+            sportif1.setAdresse(sportif.getAdresse());
+            sportif1.setDisciplineSet(sportif.getDisciplineSet());
+            sportif1.setNom("Tom");
+            System.out.println("Debut create sportif");
+            daoSportif.create(sportif1);
+            sportif1.setNom("Jackie");
+            System.out.println("Debut update sportif");
+            daoSportif.update(sportif1);
+            System.out.println("Debut delete sportif");
+            daoSportif.delete(sportif1);
+            System.out.println("Fin delete sportif");
+
             
-            */
             
 
 

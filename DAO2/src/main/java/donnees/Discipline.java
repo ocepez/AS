@@ -7,6 +7,7 @@ package donnees;
 import java.io.Serializable;
 import java.util.Set;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -39,10 +40,10 @@ public class Discipline implements Serializable {
     private Integer codeDiscipline;
     @Column(name = "intitule")
     private String intitule;
-    @ManyToMany(mappedBy = "disciplineSet")
+    @ManyToMany(cascade = CascadeType.ALL,mappedBy = "disciplineSet")
     private Set<Sportif> sportifSet;
     @JoinColumn(name = "code_sport", referencedColumnName = "code_sport")
-    @ManyToOne
+    @ManyToOne (cascade =  CascadeType.MERGE)
     private Sport codeSport;
 
     public Discipline() {

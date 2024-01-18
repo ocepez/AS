@@ -2,6 +2,7 @@ package sportsDAO;
 
 import donnees.Discipline;
 import donnees.Sport;
+import donnees.Sportif;
 
 /**
  * Fabrique concrète de DAO pour le schéma relationnel sports avec une implémentation en JDBC.
@@ -18,10 +19,24 @@ public class Sports_JPA_DAOFactory extends SportsDAOFactory {
      * Le DAO concret en JDBC pour la table Discipline
      */
     private DAO_JPA_Discipline daoDiscipline = null;
+    
+	/**
+	 * Le DAO concret en JDBC pour la table Sport
+	 */
+    private DAO_JPA_All<Sport> daoSport1 = null;
+    
+    /**
+     * Le DAO concret en JDBC pour la table Discipline
+     */
+    private  DAO_JPA_All<Discipline> daoDiscipline1 = null;
+    
+    private DAO_JPA_All<Sportif> daos = null;
+    
         
     @Override
     public DAO_JPA<Sport> getDAOSport() throws DAOException {
         if (daoSport == null) daoSport = new DAO_JPA_Sport();
+        
         return daoSport;
     }
 
@@ -30,4 +45,21 @@ public class Sports_JPA_DAOFactory extends SportsDAOFactory {
         if (daoDiscipline == null) daoDiscipline = new DAO_JPA_Discipline();
         return daoDiscipline;
     }
+    @Override
+    public DAO_JPA_All<Sport> getDAOSport1() throws DAOException {
+        if (daoSport == null) daoSport1 = new DAO_JPA_All<Sport>();
+        
+        return daoSport1;
+    }
+    @Override
+    public DAO_JPA_All<Discipline> getDAODiscipline1() throws DAOException {
+        if (daoDiscipline == null) daoDiscipline1 = new DAO_JPA_All<Discipline>();
+        return daoDiscipline1;
+    }
+
+	@Override
+	public  DAO_JPA_All<Sportif> getDAOSportif1() throws DAOException {
+        if (daos == null) daos = new DAO_JPA_All<Sportif>();
+        return daos;
+	}
 }

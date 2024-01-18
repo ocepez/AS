@@ -20,4 +20,9 @@ public abstract class SportsDAOFactory<T> {
      * @throws DAOException en cas de problème
      */
     public abstract T getDAODiscipline() throws DAOException;
+
+    public abstract T getDAODiscipline1() throws DAOException ;
+	public abstract T getDAOSport1() throws DAOException;
+	public abstract T getDAOSportif1() throws DAOException;
+
 }

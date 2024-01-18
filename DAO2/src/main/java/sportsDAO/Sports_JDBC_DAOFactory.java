@@ -30,4 +30,22 @@ public class Sports_JDBC_DAOFactory extends SportsDAOFactory {
         if (daoDiscipline == null) daoDiscipline = new DAO_JDBC_Discipline();
         return daoDiscipline;
     }
+
+	@Override
+	public Object getDAODiscipline1() throws DAOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object getDAOSport1() throws DAOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object getDAOSportif1() throws DAOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

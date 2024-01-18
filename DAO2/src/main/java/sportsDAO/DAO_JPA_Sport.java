@@ -1,6 +1,7 @@
 package sportsDAO;
 
 import java.sql.Connection;
+import java.util.Iterator;
 
 import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
@@ -90,18 +91,24 @@ public class DAO_JPA_Sport extends DAO_JPA<Sport> {
 		}
 
 	@Override
-	public void delete(Sport disc) throws DAOException {
+	public void delete(Sport sport) throws DAOException {
 		try {
 			trans = em.getTransaction();
 			trans.begin();
-			em.remove(disc);
+		/*	if(disc.getDisciplineSet() != null && !disc.getDisciplineSet().isEmpty()) {
+				Iterator<Discipline> iter = disc.getDisciplineSet().iterator();
+				while(iter.hasNext()) {
+					Discipline discc = iter.next();
+					em.remove(discc);
+				}
+			}*/
+			em.remove(sport);
 			trans.commit();
 		} catch(IllegalArgumentException  e ) {
-			System.out.println("Sport update : Argument mauvais");
-
+			System.out.println("Sport delete : Argument mauvais");
 			
 		} catch(TransactionRequiredException f) {
-			System.out.println("Sport update : Transaction non active");
+			System.out.println("Sport delete : Transaction non active");
 		}
 	}
 

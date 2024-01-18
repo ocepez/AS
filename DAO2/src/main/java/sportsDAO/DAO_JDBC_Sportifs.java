@@ -1,8 +1,8 @@
 package sportsDAO;
 
-import donnees.Discipline;
-import donnees.Sport;
-import donnees.Sportif;
+import data.Discipline;
+import data.Sport;
+import data.Sportif;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
