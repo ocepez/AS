@@ -1,7 +1,6 @@
 
 import donnees.Sport;
 import donnees.Discipline;
-
 import javax.persistence.*;
 
 public class TestJPA {

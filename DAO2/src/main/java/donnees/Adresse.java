@@ -4,8 +4,10 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.Table;
 
 @Embeddable
+@Table(name = "sportif")
 public class Adresse implements Serializable{
 	
     /**
