@@ -14,8 +14,10 @@ public class AbstractDAOFactory {
     public static SportsDAOFactory getDAOFactory(PersistenceKind type) {
         if (type.equals(PersistenceKind.JDBC)) {
             return new Sports_JDBC_DAOFactory();
-        } else {
+        } else if (type.equals(PersistenceKind.JPA)){
+        	return new Sports_JPA_DAOFactory();
+        } 
             return null;
-        }
     }
+    
 }

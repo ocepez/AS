@@ -1,8 +1,11 @@
+https://obiwan.univ-brest.fr/phpmyadmin/
 putty : e21901204@obiwan.univ-brest.fr
 mdp ent
 e21901204sql
 ig5#Q6v8
 e21901204_db1 e21901204_db2
+
+https://second-helicopter-9cc.notion.site/Git-a2cb529d1cd946129c8be5a851cd8eb7
 
  jdbc:mariadb://obiwan.univ-brest.fr:3306/e21901204_db1
 
@@ -16,6 +19,8 @@ correspondance entre contenu des données java et bases  de données (=> persist
 2/ DAO générique
 3/ fabrique pour contenu de persistance
 
+Plain Old Java Object = POJO
+entité JPA
 
 factory permet d'éviter de changer le type de persitance
 
@@ -24,3 +29,7 @@ INSERT INTO `sportif` (`code_sportif`, `nom`, `rue`, `ville`, `code_postal`) VAL
  ('1', 'Martin', 'Jacques Cartier', 'Paris', '75000'), ('2', 'Jerome', 'Napoleon', 'Paris', '75000');
 
 INSERT INTO `pratique` (`code_sportif`, `code_discipline`) VALUES ('1', '1'), ('1', '2'), ('1', '7'), ('2', '3');
+
+
+
+UPDATE `sportif` SET `rue` = 'Jacques Cgrtiers' WHERE `sportif`.`code_sportif` = 53

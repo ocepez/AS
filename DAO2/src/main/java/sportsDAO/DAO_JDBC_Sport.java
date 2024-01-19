@@ -46,7 +46,7 @@ public class DAO_JDBC_Sport extends DAO<Sport> {
                 sport.setCodeSport(res.getInt(1));
                 sport.setIntitule(res.getString(2));
                 // reste à charger les disciplines : très lourd !
-                sport.setDisciplineSet(this.getDisciplinesSport(sport));
+                sport.setDiscipline(this.getDisciplinesSport(sport));
                 return sport;
             } else {
                 throw new DAOException("Le sport d'identifiant " + id + " n'existe pas");

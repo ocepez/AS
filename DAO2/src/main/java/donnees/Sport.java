@@ -5,8 +5,10 @@
 package donnees;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,6 +18,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Cascade;
 
 import donnees.Discipline;
 
@@ -39,10 +43,11 @@ public class Sport implements Serializable {
     private Integer codeSport;
     @Column(name = "intitule")
     private String intitule;
-    @OneToMany(mappedBy = "codeSport")
+    @OneToMany(cascade = CascadeType.MERGE, mappedBy = "codeSport")
     private Set<Discipline> disciplineSet;
 
     public Sport() {
+    	this.disciplineSet = new HashSet<>();
     }
 
     public Sport(Integer codeSport) {
@@ -69,7 +74,7 @@ public class Sport implements Serializable {
         return disciplineSet;
     }
 
-    public void setDisciplineSet(Set<Discipline> disciplineSet) {
+    public void setDiscipline(Set<Discipline> disciplineSet) {
         this.disciplineSet = disciplineSet;
     }
 

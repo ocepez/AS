@@ -1,0 +1,43 @@
+package sportsDAO;
+
+import java.sql.Connection;
+
+import donnees.Sport;
+import donnees.Sportif;
+
+public class DAO_JPA_Sport extends DAO<Sport> {
+
+	
+    private Connection connection = null;
+
+	public DAO_JPA_Sport() throws DAOException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public Sport find(int id) throws DAOException {
+		// TODO Auto-generated method stub find
+		
+		return null;
+	}
+
+	@Override
+	public void create(Sport data) throws DAOException {
+		// TODO Auto-generated method stub persist de JPA
+		
+	}
+
+	@Override
+	public void update(Sport data) throws DAOException {
+		// TODO Auto-generated method stub persist
+		
+	}
+
+	@Override
+	public void delete(Sport data) throws DAOException {
+		// TODO Auto-generated method stub delete
+		
+	}
+
+}

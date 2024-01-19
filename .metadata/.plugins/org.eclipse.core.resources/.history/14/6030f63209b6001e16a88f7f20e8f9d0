@@ -1,0 +1,45 @@
+package donnees;
+
+import javax.persistence.Column;
+
+public class Adresse {
+	
+
+    @Column(name = "nom")
+    private String nom;
+    @Column(name = "rue")
+    private String rue;
+    @Column(name = "ville")
+    private String ville;
+    @Column(name = "code_postal")
+    private String codePostal;
+	
+	
+	public String getRue() {
+		return rue;
+	}
+
+	public void setRue(String rue) {
+		this.rue = rue;
+	}
+
+	public String getVille() {
+		return ville;
+	}
+
+	public void setVille(String ville) {
+		this.ville = ville;
+	}
+
+	public String getCode_postal() {
+		return code_postal;
+	}
+
+	public void setCode_postal(String code_postal) {
+		this.code_postal = code_postal;
+	}
+
+	
+	
+
+}

@@ -2,6 +2,7 @@ package sportsDAO;
 
 import donnees.Discipline;
 import donnees.Sport;
+import donnees.Sportif;
 
 /**
  * Fabrique abstraite de DAO pour le schéma sports
@@ -20,4 +21,10 @@ public abstract class SportsDAOFactory {
      * @throws DAOException en cas de problème
      */
     public abstract DAO<Discipline> getDAODiscipline() throws DAOException;
+    
+    /**
+     * @return le DAO pour la classe/table Sportifs.
+     * @throws DAOException en cas de problème
+     */
+    public abstract DAO<Sportif> getDAOSportif() throws DAOException;
 }

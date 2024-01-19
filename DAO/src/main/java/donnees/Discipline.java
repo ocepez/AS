@@ -1,5 +1,6 @@
 package donnees;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -15,7 +16,18 @@ public class Discipline implements java.io.Serializable {
     private String intitule;
     
     private Sport sport;
+   
 
+	private List<Sportif> sportifs;
+	
+	
+    public List<Sportif> getSportifs() {
+		return sportifs;
+	}
+
+	public void setSportifs(List<Sportif> sportifs) {
+		this.sportifs = sportifs;
+	}
     public int getCodeDiscipline() {
         return codeDiscipline;
     }

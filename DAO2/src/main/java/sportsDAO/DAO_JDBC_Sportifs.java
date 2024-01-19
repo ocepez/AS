@@ -1,8 +1,8 @@
 package sportsDAO;
 
-import donnees.Discipline;
-import donnees.Sport;
-import donnees.Sportif;
+import data.Discipline;
+import data.Sport;
+import data.Sportif;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -71,8 +71,8 @@ public class DAO_JDBC_Sportifs extends DAO<Sportif> {
             reqParam.setInt(1, sport.getCodeSportif());
             reqParam.setString(2, sport.getNom());
             reqParam.setString(3, sport.getRue());
-            reqParam.setString(3, sport.getVille());
-            reqParam.setString(4, sport.getCodePostal());
+            reqParam.setString(4, sport.getVille());
+            reqParam.setString(5, sport.getCodePostal());
 
             int nb = reqParam.executeUpdate();
         } catch (Exception e) {
@@ -88,8 +88,8 @@ public class DAO_JDBC_Sportifs extends DAO<Sportif> {
             reqParam.setInt(1, sport.getCodeSportif());
             reqParam.setString(2, sport.getNom());
             reqParam.setString(3, sport.getRue());
-            reqParam.setString(3, sport.getVille());
-            reqParam.setString(4, sport.getCodePostal());
+            reqParam.setString(4, sport.getVille());
+            reqParam.setString(5, sport.getCodePostal());
             int nb = reqParam.executeUpdate();
         } catch (Exception e) {
             throw new DAOException("Problème technique (" + e.getMessage() + ")");
