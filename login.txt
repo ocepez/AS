@@ -33,3 +33,105 @@ INSERT INTO `pratique` (`code_sportif`, `code_discipline`) VALUES ('1', '1'), ('
 
 
 UPDATE `sportif` SET `rue` = 'Jacques Cgrtiers' WHERE `sportif`.`code_sportif` = 53
+
+
+
+
+//////
+db.federations.insertMany([
+{
+	"nom": "F�d�ration Fran�aise de Natation",
+	"acronyme": "FFN",
+	"adresse": {
+		"rue": "104 rue Martre",
+		"ville": "Clichy",
+		"codePostal": 92110
+	},
+	"disciplines" : ["200m 4 nages", "100m libre"],
+	"sportifs" : [2, 3, 4]
+},
+{
+	"nom": "F�d�ration Fran�aise de Ski",
+	"acronyme": "FFS",
+	"adresse": {
+		"rue": " 50 rue des Marquisats",
+		"ville": "Annecy",
+		"codePostal": 74000
+	},
+	"disciplines" : ["descente", "slalom", "g�ant"],
+	"sportifs" : [1, 3, 4]
+}
+]
+)
+
+
+db.sports.insertMany([
+	{
+		"_id": 1,
+		"prenom": "Roger",
+		"nom": "Blanchard",
+		"age": 55,
+		"genre": "homme",
+		"adresse": {
+			"rue": "12 rue de Siam",
+			"ville": "Brest",
+			"codePostal": 29200
+		},
+		"disciplines": [
+			"100m",
+			"200m",
+			"descente"
+		]
+	},
+	{
+		"_id": 2,
+		"prenom": "Simone",
+		"nom": "Blanchard",
+		"age": 52,
+		"genre": "femme",
+		"adresse": {
+			"rue": "12 rue de Siam",
+			"ville": "Brest",
+			"codePostal": 29200
+		},
+		"disciplines": [
+			"200m 4 nages",
+			"100m libre"
+		]
+	},
+	{
+		"_id": 3,
+		"prenom": "G�rard",
+		"nom": "Lebreton",
+		"age": 24,
+		"genre": "homme",
+		"adresse": {
+			"rue": "20 rue Saint-Michel",
+			"ville": "Rennes",
+			"codePostal": 35000
+		},
+		"disciplines": [
+			"marathon",
+			"slalom",
+			"g�ant",
+			"100m libre"
+		]
+	},
+	{
+		"_id": 4,
+		"prenom": "R�gine",
+		"nom": "Mouvier",
+		"age": 41,
+		"genre": "femme",
+		"adresse": {
+			"rue": "153 rue Jean Jaures",
+			"ville": "Brest",
+			"codePostal": 29200
+		},
+		"disciplines": [
+			"descente",
+			"g�ant",
+			"100m libre"
+		]
+	}
+])
