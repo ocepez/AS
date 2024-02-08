@@ -7395,3 +7395,110 @@ org.eclipse.core.runtime.CoreException: Launch configuration TestJPA references 
 2024-02-01 15:30:53,450 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2024-02-01 15:30:53,455 [Worker-60: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2024-02-01 15:30:53,459 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory H:\Documents\AS\DAO4\src\test\resources
+2024-02-01 15:43:11,008 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2024-02-01 15:43:13,326 [Worker-12: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/mongodb/mongodb-driver-sync/4.8.2/mongodb-driver-sync-4.8.2.pom
+2024-02-01 15:43:13,346 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:jar:3.0.0-RC1 is missing, no dependency information available
+2024-02-01 15:43:14,858 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-01 15:43:14,868 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2024-02-01 15:43:14,877 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-01 15:43:14,883 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory H:\Documents\AS\DAO4\src\test\resources
+2024-02-01 15:43:18,973 [Worker-17: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-01 15:43:18,978 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2024-02-01 15:43:18,980 [Worker-17: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-01 15:43:18,984 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory H:\Documents\AS\DAO4\src\test\resources
+2024-02-01 15:44:20,854 [Worker-8: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-01 15:44:20,865 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-02-01 15:44:20,866 [Worker-8: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-01 15:44:20,871 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory H:\Documents\AS\DAO4\src\test\resources
+2024-02-01 15:44:23,764 [Worker-34: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: DAO4:DAO4:0.0.1-SNAPSHOT @ H:\Documents\AS\DAO4\pom.xml.
+2024-02-01 15:44:23,777 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:jar:3.0.0-RC1 is missing, no dependency information available
+2024-02-01 15:44:23,922 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:jar:3.0.0-RC1 is missing, no dependency information available
+2024-02-01 15:44:24,577 [Worker-7: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:jar:3.0.0-RC1 is missing, no dependency information available
+2024-02-01 15:44:24,648 [Worker-7: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-01 15:44:24,652 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2024-02-01 15:44:24,656 [Worker-7: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-01 15:44:24,661 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory H:\Documents\AS\DAO4\src\test\resources
+2024-02-01 15:44:25,609 [Worker-4: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/mongodb/mongodb-driver-sync/4.8.2/mongodb-driver-sync-4.8.2-sources.jar
+2024-02-01 15:44:25,672 [Worker-4: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/mongodb/mongodb-driver-sync/4.8.2/mongodb-driver-sync-4.8.2-sources.jar
+2024-02-01 15:44:26,369 [Worker-4: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.mongodb:mongodb-driver-sync:4.8.2
+2024-02-01 15:44:31,067 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-01 15:44:31,081 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2024-02-01 15:44:31,105 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-01 15:44:31,110 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory H:\Documents\AS\DAO4\src\test\resources
+2024-02-01 15:45:32,619 [Worker-4: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-01 15:45:32,626 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-02-01 15:45:32,627 [Worker-4: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-01 15:45:32,632 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory H:\Documents\AS\DAO4\src\test\resources
+2024-02-01 16:59:46,871 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-02-01 17:04:52,878 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-02-08 18:59:11,707 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2024-02-08 18:59:36,306 [Worker-4: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/netty/netty-bom/4.1.84.Final/netty-bom-4.1.84.Final.pom
+2024-02-08 18:59:36,354 [Worker-4: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/netty/netty-bom/4.1.84.Final/netty-bom-4.1.84.Final.pom
+2024-02-08 18:59:36,454 [Worker-4: reload maven project] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:jar:3.0.0-RC1 is missing, no dependency information available
+2024-02-08 18:59:43,095 [AetherRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/mongodb/bson/4.8.2/bson-4.8.2.jar
+2024-02-08 18:59:43,136 [AetherRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/mongodb/mongodb-driver-core/4.8.2/mongodb-driver-core-4.8.2.jar
+2024-02-08 18:59:43,136 [AetherRepositoryConnector-repo.maven.apache.org-0-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/mongodb/bson-record-codec/4.8.2/bson-record-codec-4.8.2.jar
+2024-02-08 18:59:43,245 [AetherRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/mongodb/bson/4.8.2/bson-4.8.2.jar
+2024-02-08 18:59:43,272 [AetherRepositoryConnector-repo.maven.apache.org-0-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/mongodb/bson-record-codec/4.8.2/bson-record-codec-4.8.2.jar
+2024-02-08 18:59:43,327 [AetherRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/mongodb/mongodb-driver-core/4.8.2/mongodb-driver-core-4.8.2.jar
+2024-02-08 19:02:30,086 [Worker-0: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-08 19:02:30,094 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2024-02-08 19:02:30,133 [Worker-0: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-08 19:02:30,137 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory H:\Documents\AS\DAO4\src\test\resources
+2024-02-08 19:02:36,534 [Worker-0: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-08 19:02:36,539 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2024-02-08 19:02:36,541 [Worker-0: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-08 19:02:36,545 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory H:\Documents\AS\DAO4\src\test\resources
+2024-02-08 19:02:36,981 [Worker-11: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2024-02-08 19:02:40,165 [Worker-11: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: DAO4:DAO4:0.0.1-SNAPSHOT @ H:\Documents\AS\DAO4\pom.xml.
+2024-02-08 19:02:40,311 [Worker-11: Updating Maven Project] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:jar:3.0.0-RC1 is missing, no dependency information available
+2024-02-08 19:02:40,828 [Worker-11: Updating Maven Project] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:jar:3.0.0-RC1 is missing, no dependency information available
+2024-02-08 19:02:42,763 [Worker-11: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /DAO4/src/main/java
+2024-02-08 19:02:42,765 [Worker-11: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Resources folder /DAO4/src/main/java overlaps with sources folder /DAO4/src/main/java
+2024-02-08 19:02:42,767 [Worker-11: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /DAO4/src/test/java
+2024-02-08 19:02:43,152 [Worker-20: Download sources and javadoc] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:jar:3.0.0-RC1 is missing, no dependency information available
+2024-02-08 19:02:43,954 [Worker-20: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/mongodb/bson/4.8.2/bson-4.8.2-sources.jar
+2024-02-08 19:02:44,072 [Worker-20: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/mongodb/bson/4.8.2/bson-4.8.2-sources.jar
+2024-02-08 19:02:44,402 [Worker-20: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.mongodb:bson:4.8.2
+2024-02-08 19:02:44,502 [Worker-20: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/mongodb/mongodb-driver-core/4.8.2/mongodb-driver-core-4.8.2-sources.jar
+2024-02-08 19:02:44,645 [Worker-20: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/mongodb/mongodb-driver-core/4.8.2/mongodb-driver-core-4.8.2-sources.jar
+2024-02-08 19:02:44,847 [Worker-20: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.mongodb:mongodb-driver-core:4.8.2
+2024-02-08 19:02:44,932 [Worker-20: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/mongodb/bson-record-codec/4.8.2/bson-record-codec-4.8.2-sources.jar
+2024-02-08 19:02:44,996 [Worker-11: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for DAO4
+2024-02-08 19:02:45,068 [Worker-20: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/mongodb/bson-record-codec/4.8.2/bson-record-codec-4.8.2-sources.jar
+2024-02-08 19:02:45,111 [Worker-11: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 8 sec
+2024-02-08 19:02:45,378 [Worker-20: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.mongodb:bson-record-codec:4.8.2
+2024-02-08 19:02:46,648 [Worker-0: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-08 19:02:46,653 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2024-02-08 19:02:46,683 [Worker-0: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-08 19:02:46,688 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory H:\Documents\AS\DAO4\src\test\resources
+2024-02-08 19:02:46,689 [Worker-0: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of DAO4
+2024-02-08 19:02:46,690 [Worker-0: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for DAO4
+2024-02-08 19:02:46,692 [Worker-0: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.apache.maven.plugins:maven-clean-plugin:jar:2.5 is missing, no dependency information available
+2024-02-08 19:02:46,725 [Worker-0: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-08 19:04:02,069 [Worker-11: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-08 19:04:02,092 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-02-08 19:04:02,094 [Worker-11: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-08 19:04:02,099 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory H:\Documents\AS\DAO4\src\test\resources
+2024-02-08 19:04:58,209 [Worker-12: reload maven project] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:jar:3.0.0-RC1 is missing, no dependency information available
+2024-02-08 19:04:58,487 [Worker-12: reload maven project] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:jar:3.0.0-RC1 is missing, no dependency information available
+2024-02-08 19:05:45,813 [Worker-20: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-08 19:05:45,820 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-02-08 19:05:45,822 [Worker-20: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-08 19:05:45,826 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory H:\Documents\AS\DAO4\src\test\resources
+2024-02-08 19:05:55,204 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-08 19:05:55,209 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-02-08 19:05:55,211 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-08 19:05:55,215 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory H:\Documents\AS\DAO4\src\test\resources
+2024-02-08 19:07:09,017 [Worker-20: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-08 19:07:09,053 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2024-02-08 19:07:09,082 [Worker-20: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-08 19:07:09,085 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory H:\Documents\AS\DAO4\src\test\resources
+2024-02-08 19:07:51,202 [Worker-20: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-08 19:07:51,222 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2024-02-08 19:07:51,227 [Worker-20: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-08 19:07:51,231 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory H:\Documents\AS\DAO4\src\test\resources
+2024-02-08 19:09:28,735 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-08 19:09:28,768 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2024-02-08 19:09:28,772 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-02-08 19:09:28,778 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory H:\Documents\AS\DAO4\src\test\resources

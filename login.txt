@@ -65,7 +65,7 @@ db.federations.insertMany([
 )
 
 
-db.sports.insertMany([
+db.sportifs.insertMany([
 	{
 		"_id": 1,
 		"prenom": "Roger",

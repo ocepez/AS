@@ -66,7 +66,8 @@ public class AfficheSportifsServlet extends HttpServlet {
 		List<Sportif> result = new ArrayList<Sportif>();
 		
 		for(mongoPojo.Sportif fed : sportifs.find()) {
-			
+			System.out.println("Sportif : \n"+fed.getNom());
+
 			mongoPojo.Sportif sp = new mongoPojo.Sportif();
 			sp.setAdresse(fed.getAdresse());
 			sp.setAge(fed.getAge());
@@ -87,6 +88,9 @@ public class AfficheSportifsServlet extends HttpServlet {
 			
 		
 		}
+		if(result == null) {
+			System.out.println("la liste de sportif n'a pas ete detecte (AfficheSportifsServlet : getListeSortifs)\n");
+		}
 		return (List<Sportif>) result;
 	}
 	
@@ -96,7 +100,7 @@ public class AfficheSportifsServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		System.out.println("doGet\n");
+		System.out.println("doGet (AfficheSportifsServlet )\n");
 		
 		String operation = request.getParameter("operation");
 		if(operation != null) {

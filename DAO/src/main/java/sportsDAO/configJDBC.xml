@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<configJDBC>
-    <url>jdbc:mariadb://obiwan.univ-brest.fr:3306/e21901204_db1</url>
-    <user>e21901204sql</user>
-    <password>ig5#Q6v8</password>
-</configJDBC>
