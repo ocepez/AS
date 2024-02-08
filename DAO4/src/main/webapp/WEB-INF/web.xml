@@ -25,12 +25,12 @@
 	</servlet-mapping>
 	<servlet>
 		<description></description>
-		<display-name>AfficheSportifs</display-name>
-		<servlet-name>AfficheSportifs</servlet-name>
+		<display-name>afficheSportifsMongo</display-name>
+		<servlet-name>afficheSportifsMongo</servlet-name>
 		<servlet-class>donnees.AfficheSportifsServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>AfficheSportifs</servlet-name>
-		<url-pattern>/Aff</url-pattern>
+		<servlet-name>afficheSportifsMongo</servlet-name>
+		<url-pattern>/aff</url-pattern>
 	</servlet-mapping>
 </web-app>

@@ -38,33 +38,33 @@ import com.mongodb.client.MongoDatabase;
  */
 public class AfficheSportifsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-	
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+
 	MongoCollection<mongoPojo.Sportif> sportifs;
 	MongoCollection<Federation> federations;
-	
+
 	List<Sportif> sportifs1 = new ArrayList<Sportif>() ;
-	
-    public AfficheSportifsServlet() {
-        super();
-    	CodecProvider pojoCodecProvider = PojoCodecProvider.builder().automatic(true).build();
+
+	public AfficheSportifsServlet() {
+		super();
+		CodecProvider pojoCodecProvider = PojoCodecProvider.builder().automatic(true).build();
 		CodecRegistry pojoCodecRegistry = fromRegistries(getDefaultCodecRegistry(), fromProviders(pojoCodecProvider));
-		
+
 		ConnectionString connectionString = new ConnectionString("mongodb://obiwan.univ-brest.fr:27017");
 		MongoClient mongoClient = MongoClients.create(connectionString);
 		MongoDatabase database = mongoClient.getDatabase("pezennec").withCodecRegistry(pojoCodecRegistry);
 		System.out.println("Connexion établie\n");
-		
+
 		federations = database.getCollection("federations", Federation.class);
 		sportifs = database.getCollection("sportifs", Sportif.class);
-    }
+	}
 	public List<Sportif> getListeSportifs() {
-		
+
 		List<Sportif> result = new ArrayList<Sportif>();
-		
+
 		for(mongoPojo.Sportif fed : sportifs.find()) {
 			System.out.println("Sportif : \n"+fed.getNom());
 
@@ -76,57 +76,57 @@ public class AfficheSportifsServlet extends HttpServlet {
 			sp.setMarie(fed.getMarie());
 			sp.setNom(fed.getNom());
 			sp.setPrenom(fed.getPrenom());
-			
+
 			if(sp.getDisciplines() == null) {
 				sp.setDisciplines(new ArrayList<String>());
 			}
-			
+
 			for(String disc : fed.getDisciplines()) 
-				{
+			{
 				sp.getDisciplines().add(disc);
-				}
-			
-		
+			}
+
+
 		}
 		if(result == null) {
 			System.out.println("la liste de sportif n'a pas ete detecte (AfficheSportifsServlet : getListeSortifs)\n");
 		}
 		return (List<Sportif>) result;
 	}
-	
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+
 		System.out.println("doGet (AfficheSportifsServlet )\n");
-		
+
 		String operation = request.getParameter("operation");
 		if(operation != null) {
 			System.out.println("operation\n");
 
-		if (operation.equals("listeSportifMongo")) {
-			System.out.println("listeSportifMongo\n");
+			if (operation.equals("listeSportifMongo")) {
+				System.out.println("listeSportifMongo\n");
 
-			// rï¿½cupï¿½re la liste des sportifs et l'associe ï¿½ la requï¿½te HTTP
-			request.setAttribute("sportifs", this.getListeSportifs());
-			// forwarde la requï¿½te ï¿½ la page JSP
-			getServletConfig().getServletContext().getRequestDispatcher("/afficheSportifsMongo.jsp")
-				.forward(request, response);
-		} else if (operation.equals("listeDisciplines")) {
-			//request.setAttribute("Disciplines", this.getListeDisciplines());
-			//request.setAttribute("yo", this.getListeSports());
+				// rï¿½cupï¿½re la liste des sportifs et l'associe ï¿½ la requï¿½te HTTP
+				request.setAttribute("sportifs", this.getListeSportifs());
+				// forwarde la requï¿½te ï¿½ la page JSP
 
-			//getServletConfig().getServletContext().getRequestDispatcher("/creationDisc.jsp").forward(request, response);
-			System.out.println("Attribut inconnu");
+				getServletConfig().getServletContext().getRequestDispatcher("/afficheSportifsMongo.jsp").forward(request, response);
+			} else if (operation.equals("listeDisciplines")) {
+				//request.setAttribute("Disciplines", this.getListeDisciplines());
+				//request.setAttribute("yo", this.getListeSports());
 
-			
-		}
+				//getServletConfig().getServletContext().getRequestDispatcher("/creationDisc.jsp").forward(request, response);
+				System.out.println("Attribut inconnu");
+
+
+			}
 		}else {
 			System.out.println("Operation vide");
 		}
-	//	response.getWriter().append("Served at: ").append(request.getContextPath());
+		//	response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
